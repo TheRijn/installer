@@ -323,7 +323,7 @@ then
     clear_wait
     ohai "Homebrew must be installed. It is a 'package manager' that helps to install software that we need for development."
     wait_for_user
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     if [[ ($? -ne 0) ]]
     then
       echo 'Homebrew install failed'
